@@ -11,7 +11,7 @@ OBJS	:=$(SOURCES:%.c=%.o)
 
 
 %.o: %.c
-	${CC} -o $@ -c -g $<
+	${CC} -o $@ -c -g -Wall -Wextra $<
 
 
 clean:
