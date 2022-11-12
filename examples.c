@@ -5,28 +5,37 @@
 #include <time.h>
 #include "examples.h"
 
-#define FILES_NUM 17
+#define FILES_NUM 23
+
+const int files_num=FILES_NUM;
+
+const char *const filenames[FILES_NUM]={ "lessons/fj.txt",
+                                         "lessons/kd.txt",
+                                         "lessons/ls.txt",
+                                         "lessons/a;.txt",
+                                         "lessons/pw.txt",
+                                         "lessons/pq.txt",
+                                         "lessons/ik.txt",
+                                         "lessons/ie.txt",
+                                         "lessons/ur.txt",
+                                         "lessons/ty.txt",
+                                         "lessons/rtyu.txt",
+                                         "lessons/asdf.txt",
+                                         "lessons/iked.txt",
+                                         "lessons/fghj.txt",
+                                         "lessons/jn.txt",
+                                         "lessons/fv.txt",
+                                         "lessons/fvjn.txt",
+                                         "lessons/az.txt",
+                                         "lessons/ws.txt",
+                                         "lessons/jkluiop.txt",
+                                         "lessons/ex.txt",
+                                         "lessons/sch.txt",
+                                         "lessons/olp.txt"};
 
 void make_examples(void)
 {
 
-  const char *const filenames[FILES_NUM]={ "lessons/fj.txt",
-                                           "lessons/kd.txt",
-                                           "lessons/ls.txt",
-                                           "lessons/a;.txt",
-                                           "lessons/pw.txt",
-                                           "lessons/pq.txt",
-                                           "lessons/ik.txt",
-                                           "lessons/ie.txt",
-                                           "lessons/ur.txt",
-                                           "lessons/ty.txt",
-                                           "lessons/rtyu.txt",
-                                           "lessons/asdf.txt",
-                                           "lessons/iked.txt",
-                                           "lessons/fghj.txt",
-                                           "lessons/jn.txt",
-                                           "lessons/fv.txt",
-                                           "lessons/fvjn.txt"};
 
   const char *const chars[FILES_NUM] ={ "fjffjj",
                                         "kdkkdd",
@@ -44,7 +53,13 @@ void make_examples(void)
                                         "fghj",
                                         "jn",
                                         "fv",
-                                        "fvjn"};
+                                        "fvjn",
+                                        "az",
+                                        "ws",
+                                        "jkluiop",
+                                        "ex",
+                                        "sch",
+                                        "olp"};
 
   FILE * fp[FILES_NUM];
   srand(time(NULL));

@@ -9,7 +9,7 @@
 struct menu{
 
   const char * menu_name;
-  const char * menu_items[20];
+  const char * menu_items[25];
   uint8_t size;
 
 };

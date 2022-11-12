@@ -11,7 +11,7 @@
 
 const char *name="Abdulrahman Aboghanima Ahmed\nis a clever programmer, I love him so much";
 
-const char *test[N]={"This", "is", "a", "Test,", "MAN"};
+
 
 char buff[BUFF_LEN];
 
@@ -23,34 +23,28 @@ const char *  main_menu_items[]={"Lessons",
                             "Exit"};
 
 
-const char * filenames[]={ "lessons/fj.txt",
-                           "lessons/kd.txt",
-                           "lessons/ls.txt",
-                           "lessons/a;.txt",
-                           "lessons/pw.txt",
-                           "lessons/pq.txt",
-                           "lessons/ik.txt",
-                           "lessons/ie.txt",
-                           "lessons/ur.txt",
-                           "lessons/ty.txt",
-                           "lessons/rtyu.txt",
-                           "lessons/asdf.txt",
-                           "lessons/iked.txt",
-                           "lessons/fghj.txt",
-                           "lessons/jn.txt",
-                           "lessons/fv.txt",
-                           "lessons/fvjn.txt",
-                           "lessons/custom.txt"};
-
-
+extern const char *filenames[];
+extern const int files_num;
 
 menu_t  main_menu;
 menu_t lessons_menu;
 
 int d;
 
-int main(void)
+
+
+int main(int argc, char *argv[])
 {
+  if(argc>1){
+    if(!strcmp(argv[1], "make_examples"))
+      make_examples();
+    else{
+      printf("Wrong option\n");
+      return 1;
+    }
+  }
+
+
 
   initscr();
   WINDOW *help_win=newwin(0,0,0,0);
@@ -67,15 +61,13 @@ int main(void)
   wbkgd(main_menu_win, COLOR_PAIR(1));
 
 
-  //make_examples();
-
   mvwaddstr(help_win, 5, 10, "This is written by Abdulrahman Aboghanima (@abdoaboganima)");
   touchwin(help_win);
   wrefresh(help_win);
 
 
   create_menu(&main_menu, "Main Menu", main_menu_items, 4);
-  create_menu(&lessons_menu, "Lessons" , filenames, 18);
+  create_menu(&lessons_menu, "Lessons" , filenames, files_num);
 
   do{
     int main_menu_item=select_from_menu(main_menu_win, &main_menu);

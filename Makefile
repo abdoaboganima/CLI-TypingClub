@@ -4,7 +4,7 @@ LIBS=-lncurses
 SOURCES :=$(shell ls *.c)
 OBJS	:=$(SOURCES:%.c=%.o)
 
-
+all: main.out
 
 %.out: $(OBJS)
 	${CC} -o $@ $^ ${LIBS}
